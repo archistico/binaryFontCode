@@ -5,7 +5,7 @@ def binary(num):
     ret = str(bin(num))[2:].zfill(16)
     return ret
 
-text = """abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåæçèéêëìíîïòóôõùúûü0123456789/*-+<>,.-;:_°§@#[]\|!"£$%&()='?^€~` """
+text = """abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜàáâãäåæçèéêëìíîïòóôõöùúûü0123456789/*-+<>,.-;:_°§@#[]\|!"£$%&()='?^€~`{} """
 
 textlength = len(text)
 for char in text:
