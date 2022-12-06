@@ -2,10 +2,11 @@ import svgwrite
 import os
 
 def binary(num):
-    ret = str(bin(num))[2:].zfill(16)
+    ret = str(bin(num))[2:].zfill(8)
     return ret
 
-text = """abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜàáâãäåæçèéêëìíîïòóôõöùúûü0123456789/*-+<>,.-;:_°§@#[]\|!"£$%&()='?^€~`{} """
+text = """abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜàáâãäåæçèéêëìíîïòóôõöùúûü0123456789/*-+<>,.-;:_°§@#[]\|!"£$%&()='?^~`{} """
+# altro = """€"""
 
 textlength = len(text)
 for char in text:
@@ -14,7 +15,7 @@ for char in text:
     print(char, "\t", ascii, "\t", binario)
     
     contatore = 0
-    elementiRiga = 4
+    elementiRiga = 3
     contatoreRiga = 0
     sizeRect = 10
     sizeSep = 0
