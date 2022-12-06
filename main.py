@@ -5,8 +5,8 @@ def binary(num):
     ret = str(bin(num))[2:].zfill(16)
     return ret
 
-text = """abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZàèéìòùÀÈÉÌÒÙ0123456789/*-+<>,.-;:_ç°§@#[]\|!"£$%&()='?^€~` """
-#text = """aA"""
+text = """abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåæçèéêëìíîïòóôõùúûü0123456789/*-+<>,.-;:_°§@#[]\|!"£$%&()='?^€~` """
+
 textlength = len(text)
 for char in text:
     ascii = ord(char)
@@ -26,15 +26,16 @@ for char in text:
     path = os.path.join(os.path.dirname(os.path.abspath(__file__)), directory, str(ascii)+'.svg')
     
     dwg = svgwrite.Drawing(path, size=(str(sizeDwg)+'px', str(sizeDwg)+'px'), profile='tiny')
-    dwg.add(dwg.rect((0,0),(sizeDwg,sizeDwg), fill=svgwrite.rgb(0, 0, 0, '%')))
+    dwg.add(dwg.rect((0,0),(sizeDwg,sizeDwg), fill=svgwrite.rgb(255, 255, 255, '%')))
     for cb in binario:
         if contatore > elementiRiga-1:
             contatoreRiga += 1
             contatore = 0
         if cb == '0':
-            dwg.add(dwg.rect((sizeSep + contatore*sizeRect + contatore*sizeSep, sizeSep + contatoreRiga*sizeRect + contatoreRiga*sizeSep),(sizeRect,sizeRect), fill=svgwrite.rgb(255, 255, 255, '%')))
-        elif cb == '1':
             pass
-            #dwg.add(dwg.rect((sizeSep + contatore*sizeRect + contatore*sizeSep, sizeSep + contatoreRiga*sizeRect + contatoreRiga*sizeSep),(sizeRect,sizeRect), fill=svgwrite.rgb(0, 0, 0, '%')))
+            #dwg.add(dwg.rect((sizeSep + contatore*sizeRect + contatore*sizeSep, sizeSep + contatoreRiga*sizeRect + contatoreRiga*sizeSep),(sizeRect,sizeRect), fill=svgwrite.rgb(255, 255, 255, '%')))
+        elif cb == '1':
+            #pass
+            dwg.add(dwg.rect((sizeSep + contatore*sizeRect + contatore*sizeSep, sizeSep + contatoreRiga*sizeRect + contatoreRiga*sizeSep),(sizeRect,sizeRect), fill=svgwrite.rgb(0, 0, 0, '%')))
         contatore += 1
     dwg.save()
