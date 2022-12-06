@@ -2,10 +2,24 @@ def binary(num):
     ret = str(bin(num))[2:].zfill(8)
     return ret
 
-text = """abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜàáâãäåæçèéêëìíîïòóôõöùúûü0123456789/*-+<>,.-;:_°§@#[]\|!"£$%&()='?^~`{} """
-
 lettere = [
     [" ", "space"],
+    ["!", "exclam"],
+    ["\"", "quotedbl"],
+    ["#", "numbersign"],
+    ["$", "dollar"],
+    ["%", "percent"],
+    ["&", "ampersand"],
+    ["'", "quotesingle"],
+    ["(", "parenleft"],
+    [")", "parenright"],
+    ["*", "asterisk"],
+    ["+", "plus"],
+    [",", "comma"],
+    ["-", "hyphenminus"],
+    [".", "period"],
+    ["/", "slash"],
+
     ["0", "zero"],
     ["1", "one"],
     ["2", "two"],
@@ -16,6 +30,14 @@ lettere = [
     ["7", "seven"],
     ["8", "eight"],
     ["9", "nine"],
+
+    [":", "colon"],
+    [";", "semicolon"],
+    ["<", "less"],
+    ["=", "equal"],
+    [">", "greater"],
+    ["?", "question"],
+    ["@", "at"],
 
     ["A", "A"],
     ["B", "B"],
@@ -44,6 +66,13 @@ lettere = [
     ["Y", "Y"],
     ["Z", "Z"],
 
+    ["[", "bracketleft"],
+    ["\\", "backslash"],
+    ["]", "bracketright"],
+    ["^", "asciicircum"],
+    ["_", "underscore"],
+    ["`", "grave"],
+
     ["a", "a"],
     ["b", "b"],
     ["c", "c"],
@@ -70,13 +99,71 @@ lettere = [
     ["x", "x"],
     ["y", "y"],
     ["z", "z"],
-    
-    ["", ""],
+
+    ["{", "braceleft"],
+    ["|", "bar"],
+    ["}", "braceright"],
+    ["~", "asciitilde"],
+    ["£", "sterling"],
+    ["§", "section"],
+    ["°", "degree"],
+
+    ["À", "Agrave"],
+    ["Á", "Aacute"],
+    ["Â", "Acircumflex"],
+    ["Ã", "Atilde"],
+    ["Ä", "Adieresis"],
+    ["Å", "Aring"],
+    ["Æ", "AE"],
+    ["Ç", "Ccedilla"],
+    ["È", "Egrave"],
+    ["É", "Eacute"],
+    ["Ê", "Ecircumflex"],
+    ["Ë", "Edieresis"],
+    ["Ì", "Igrave"],
+    ["Í", "Iacute"],
+    ["Î", "Icircumflex"],
+    ["Ï", "Idieresis"],
+    ["Ò", "Ograve"],
+    ["Ó", "Oacute"],
+    ["Ô", "Ocircumflex"],
+    ["Õ", "Otilde"],
+    ["Ö", "Odieresis"],
+    ["Ù", "Ugrave"],
+    ["Ú", "Uacute"],
+    ["Û", "Ucircumflex"],
+    ["Ü", "Udieresis"],
+
+    ["à", "agrave"],
+    ["á", "aacute"],
+    ["â", "acircumflex"],
+    ["ã", "atilde"],
+    ["ä", "adieresis"],
+    ["å", "aring"],
+    ["æ", "ae"],
+    ["ç", "ccedilla"],
+    ["è", "egrave"],
+    ["é", "eacute"],
+    ["ê", "ecircumflex"],
+    ["ë", "edieresis"],
+    ["ì", "igrave"],
+    ["í", "iacute"],
+    ["î", "icircumflex"],
+    ["ï", "idieresis"],
+    ["ò", "ograve"],
+    ["ó", "oacute"],
+    ["ô", "ocircumflex"],
+    ["õ", "otilde"],
+    ["ö", "odieresis"],
+    ["ù", "ugrave"],
+    ["ú", "uacute"],
+    ["û", "ucircumflex"],
+    ["ü", "udieresis"]
 ]
 
-# ["", ""],
+# Escluso il simbolo dell'euro perché codice di 14 cifre ["€", "euro"]
 
 for lettera in lettere:
     ascii = ord(lettera[0])
     binario = binary(ascii)
-    print(lettera[0], "\t", lettera[1], "\t", ascii, "\t", binario)
+    print(f'{lettera[1].ljust(15)} {lettera[0]}\t{"#"+str(ascii)}\t{binario}')
