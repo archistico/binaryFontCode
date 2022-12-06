@@ -17,7 +17,7 @@ for char in text:
     elementiRiga = 4
     contatoreRiga = 0
     sizeRect = 10
-    sizeSep = 1
+    sizeSep = 0
 
     sizeDwg = elementiRiga * sizeRect + (elementiRiga + 1) * sizeSep
     directory = "generate"
@@ -34,6 +34,7 @@ for char in text:
         if cb == '0':
             dwg.add(dwg.rect((sizeSep + contatore*sizeRect + contatore*sizeSep, sizeSep + contatoreRiga*sizeRect + contatoreRiga*sizeSep),(sizeRect,sizeRect), fill=svgwrite.rgb(255, 255, 255, '%')))
         elif cb == '1':
-            dwg.add(dwg.rect((sizeSep + contatore*sizeRect + contatore*sizeSep, sizeSep + contatoreRiga*sizeRect + contatoreRiga*sizeSep),(sizeRect,sizeRect), fill=svgwrite.rgb(0, 0, 0, '%')))
+            pass
+            #dwg.add(dwg.rect((sizeSep + contatore*sizeRect + contatore*sizeSep, sizeSep + contatoreRiga*sizeRect + contatoreRiga*sizeSep),(sizeRect,sizeRect), fill=svgwrite.rgb(0, 0, 0, '%')))
         contatore += 1
     dwg.save()
