@@ -2,7 +2,7 @@
 
 ## Glyphs
 
-![glyphs](glyphs.png)
+![glyphs](https://github.com/archistico/binaryFontCode/raw/main/glyphs.png)
 
 ## License
 
